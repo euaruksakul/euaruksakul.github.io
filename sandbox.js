@@ -36,7 +36,7 @@ d3.csv("Table0.csv").then( function (data){
     .join("circle")
         .attr("cx", function (d) { return x(d.DXPS01_hv); } )
         .attr("cy", function (d) { return y(d.DXPS01); } )
-        .attr("r", 1.5)
+        .attr("r", 2)
         .style("fill", "#69b3a2")
 });
 const svg = d3.select('svg');
