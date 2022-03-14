@@ -36,8 +36,18 @@ d3.csv("Table0.csv").then( function (data){
     .join("circle")
         .attr("cx", function (d) { return x(d.DXPS01_hv); } )
         .attr("cy", function (d) { return y(d.DXPS01); } )
-        .attr("r", 2)
-        .style("fill", "#69b3a2")
+        .attr("r", 1.5)
+        .style("fill", "#ff0000")
+
+    svg.append("path")
+    .datum(data)
+    .attr("fill", "none")
+    .attr("stroke", "#ff0000")
+    .attr("stroke-width", 1)
+    .attr("d", d3.line()
+        .x(function(d) { return x(d.DXPS01_hv) })
+        .y(function(d) { return y(d.DXPS01) })
+        )
 });
 const svg = d3.select('svg');
-svg.style('background-color','grey')
+svg.style('background-color','white')
